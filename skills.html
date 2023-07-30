@@ -23,7 +23,7 @@
     <div class="container">
         <div class="row d-flex justify-content-center">
             <div class="col-6">
-                <select id="order-select" class="form-select">
+                <select id="order-select" class="form-select" onChange="ShowSkills(this.value);">
                     <option selected value="1" class="">Default</option>
                     <option value="2">A-Z</option>
                 </select>
@@ -34,26 +34,42 @@
     <div id="skills-container" class="d-flex m-5">
         <!--Cards-->
         <div class="container d-flex justify-content-center align-items-center h-100"> <!--Cards container-->
-            <div class="row"> <!-- mx-5 -->
+            <div class="row" id="skills-row-container"> <!-- mx-5 -->
                 <script>
-                    var result = LoadSkills();
-                    var all_skills = result[0];
-                    var skill_img = "";
-                    for (var i = 0; i<all_skills.length; i++) { 
-                        skill_img = "public/img/skills/";
-                        if (all_skills[i] == "C# (.NET framework)") skill_img += "C sharp";
-                        else skill_img += all_skills[i];
-                        document.write(`
-                        <div class="card mx-2 mb-3" style="width: 15.8rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">${all_skills[i]}</h5>
-                                    <img src="${skill_img}.png" class="card-img-top img-fluid" alt="${all_skills[i]}">
-                                    <p class="card-text"></p>
-                                    <a href="https://www.google.com/search?q=${encodeURIComponent(all_skills[i])}" target="_blank" class="btn btn-primary">Learn More</a>
+                    selectedValue = null;
+                    var rowContainer = document.getElementById("skills-row-container");
+                    var original_skills_order;
+                    function ShowSkills(selectedValue) {
+                        var result = LoadSkills();
+                        var all_skills = result[0];
+                        if (!original_skills_order)
+                            original_skills_order = all_skills.slice();
+
+                        if (selectedValue === "2") 
+                            all_skills.sort();
+                        else if (selectedValue === "1") 
+                            all_skills = original_skills_order.slice();
+                        
+                        rowContainer.innerHTML = "";
+                        console.log(all_skills);
+                        var skill_img = "";
+                        for (var i = 0; i<all_skills.length; i++) { 
+                            skill_img = "public/img/skills/";
+                            if (all_skills[i] == "C# (.NET framework)") skill_img += "C sharp";
+                            else skill_img += all_skills[i];
+                            rowContainer.innerHTML += `
+                            <div class="card mx-2 mb-3" style="width: 15.8rem;">
+                                    <div class="card-body">
+                                        <h5 class="card-title">${all_skills[i]}</h5>
+                                        <img src="${skill_img}.png" class="card-img-top img-fluid" alt="${all_skills[i]}">
+                                        <p class="card-text"></p>
+                                        <a href="https://www.google.com/search?q=${encodeURIComponent(all_skills[i])}" target="_blank" class="btn btn-primary">Learn More</a>
+                                    </div>
                                 </div>
-                            </div>
-                        `);
-                    }
+                            `;
+                        }
+                    } 
+                    ShowSkills(selectedValue);                   
                 </script>
             </div>
         </div>

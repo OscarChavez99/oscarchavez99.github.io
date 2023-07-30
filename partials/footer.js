@@ -2,10 +2,10 @@ document.write(`
 <style>
     footer {
         font-size: 2rem;
+        flex-shrink: 0;
     }
 </style>
 
-<link rel="stylesheet" href="../../public/css/footer.css">
 <footer class="mt-auto bg-dark">
     <div class="text-light d-flex justify-content-center align-items-center mx-3">
         <p class="container text-center">
