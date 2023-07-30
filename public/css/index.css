@@ -1,7 +1,3 @@
-#iframe-navbar {
-    position: absolute; top: 0; left: 0; width: 100%; height: 8%;
-}
-
 #picture-container{
     margin-top: 3rem;
 }
@@ -25,6 +21,7 @@
 
 #skills-title {
     font-size: 10vh;
+    margin-top: 1rem;
 }
 
 #skills-text{
