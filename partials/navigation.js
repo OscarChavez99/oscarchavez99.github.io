@@ -30,6 +30,7 @@ document.write(`
 
 document.addEventListener("DOMContentLoaded", function () {
     var currentPath = window.location.pathname;
+    alert(currentPath);
     // Remove '/' if exists
     currentPath = currentPath.replace(/^\/|\/$/g, '');
     // Get all 'nav-link' clases 
@@ -38,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.forEach(function (link) {
         //Get link but without '/'
         var linkPath = link.getAttribute("href").replace(/^\/|\/$/g, '');
-        if (currentPath.includes(linkPath) || currentPath === '') {
+        if (currentPath.includes(linkPath)) {
             //Remove 'active' to class if it's the current page to look opaque
             link.classList.remove("active");
         }
