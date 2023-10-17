@@ -38,10 +38,12 @@ document.addEventListener("DOMContentLoaded", function () {
             link.classList.remove("active");
         }
     });
-    if (currentPath === "") {
-        // Si la ruta actual está vacía, entonces estamos en la página de inicio
-        navLinks[0].classList.add("active"); // Suponiendo que el primer enlace es "home"
+
+    if (currentPath === "" && navLinks[0].getAttribute("href").replace(/^\/|\/$/g, '') === "") {
+        // Si la ruta actual está vacía y el primer enlace tiene una ruta vacía, marcamos el primer enlace como activo
+        navLinks[0].classList.add("active");
     }
 });
+
 
 
