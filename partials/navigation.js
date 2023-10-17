@@ -29,17 +29,12 @@ document.write(`
 `);
 
 document.addEventListener("DOMContentLoaded", function () {
-    var currentPath = window.location.pathname;
-    // Remove '/' if exists
-    currentPath = currentPath.replace(/^\/|\/$/g, '');
-    // Get all 'nav-link' clases 
+    var currentPath = window.location.pathname.replace(/^\/|\/$/g, ''); // Remove '/'
     var navLinks = document.querySelectorAll(".nav-link");
-    // For each navLinks...
+
     navLinks.forEach(function (link) {
-        //Get link but without '/'
-        var linkPath = link.getAttribute("href").replace(/^\/|\/$/g, '');
-        if (currentPath.includes(linkPath) || !currentPath) {
-            //Remove 'active' to class if it's the current page to look opaque
+        var linkPath = link.getAttribute("href").replace(/^\/|\/$/g, ''); // Remove '/'
+        if (currentPath === linkPath) {
             link.classList.remove("active");
         }
     });
