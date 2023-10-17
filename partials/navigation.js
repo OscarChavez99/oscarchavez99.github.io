@@ -30,7 +30,6 @@ document.write(`
 
 document.addEventListener("DOMContentLoaded", function () {
     var currentPath = window.location.pathname;
-    console.log("c: "+currentPath);
     // Remove '/' if exists
     currentPath = currentPath.replace(/^\/|\/$/g, '');
     // Get all 'nav-link' clases 
