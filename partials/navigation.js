@@ -38,7 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     navLinks.forEach(function (link) {
         //Get link but without '/'
         var linkPath = link.getAttribute("href").replace(/^\/|\/$/g, '');
-        if (currentPath.includes(linkPath)) {
+        if (currentPath.includes(linkPath) || !currentPath) {
             //Remove 'active' to class if it's the current page to look opaque
             link.classList.remove("active");
         }
