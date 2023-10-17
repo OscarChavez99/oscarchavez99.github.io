@@ -29,20 +29,20 @@ document.write(`
 `);
 
 document.addEventListener("DOMContentLoaded", function () {
-    var currentPath = window.location.pathname.replace(/^\/|\/$/g, ''); // Remove '/'
+    var currentPath = window.location.pathname;
+    // Remove '/' if exists
+    currentPath = currentPath.replace(/^\/|\/$/g, '');
+    // Get all 'nav-link' clases 
     var navLinks = document.querySelectorAll(".nav-link");
-
+    // For each navLinks...
     navLinks.forEach(function (link) {
-        var linkPath = link.getAttribute("href").replace(/^\/|\/$/g, ''); // Remove '/'
-        if (currentPath === linkPath) {
+        //Get link but without '/'
+        var linkPath = link.getAttribute("href").replace(/^\/|\/$/g, '');
+        if (currentPath.includes(linkPath) || currentPath === '') {
+            //Remove 'active' to class if it's the current page to look opaque
             link.classList.remove("active");
         }
     });
-
-    if (currentPath === "" && navLinks[0].getAttribute("href").replace(/^\/|\/$/g, '') === "") {
-        // Si la ruta actual está vacía y el primer enlace tiene una ruta vacía, marcamos el primer enlace como activo
-        navLinks[0].classList.add("active");
-    }
 });
 
 
