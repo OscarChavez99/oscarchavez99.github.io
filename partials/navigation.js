@@ -32,17 +32,16 @@ document.addEventListener("DOMContentLoaded", function () {
     var currentPath = window.location.pathname.replace(/^\/|\/$/g, ''); // Remove '/'
     var navLinks = document.querySelectorAll(".nav-link");
 
-    if (currentPath === "") {
-        // Si la ruta actual está vacía, entonces estamos en la página de inicio
-        navLinks[0].classList.add("active"); // Suponiendo que el primer enlace es "home"
-    }
-
     navLinks.forEach(function (link) {
         var linkPath = link.getAttribute("href").replace(/^\/|\/$/g, ''); // Remove '/'
         if (currentPath === linkPath) {
             link.classList.remove("active");
         }
     });
+    if (currentPath === "") {
+        // Si la ruta actual está vacía, entonces estamos en la página de inicio
+        navLinks[0].classList.add("active"); // Suponiendo que el primer enlace es "home"
+    }
 });
 
 
