@@ -1,4 +1,4 @@
-var skills = ["Python", "C# (.NET)", "APIs (ASP.NET) MVC", "TypeScript (Angular)", 
+var skills = ["Python", "C# (.NET)", "API's (ASP.NET) MVC", "TypeScript (Angular)", 
 "JavaScript (Node.JS, Express)", "HTML 5", "CSS and Bootstrap", "PHP", "SQL", "phpMyAdmin", 
 "GIT & GitHub", "C", "C++", "VPS", "JSON", "Microsoft Office"];
 

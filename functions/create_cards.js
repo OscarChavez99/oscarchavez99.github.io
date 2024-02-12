@@ -2,8 +2,10 @@ function CreateCards(all_skills, skill_img, rowContainer){
     
     for (var i = 0; i<all_skills.length; i++) { 
         skill_img = "public/img/skills/"; //image route
+        // Trim '#'
         if (all_skills[i] == "C# (.NET)") 
             skill_img += "C sharp";
+
         else skill_img += all_skills[i]; //skill_image = image route + image name
         rowContainer.innerHTML += `
         <div class="card mx-2 mb-3" style="width: 15.8rem;">
