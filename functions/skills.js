@@ -1,6 +1,6 @@
-var skills = ["Python", "C# (.NET)", "API's (ASP.NET) MVC", "TypeScript (Angular)", 
-"JavaScript (Node.JS, Express)", "HTML 5", "CSS and Bootstrap", "PHP", "SQL", "phpMyAdmin", 
-"GIT & GitHub", "C", "C++", "VPS", "JSON", "Microsoft Office"];
+var skills = ["C# (.NET)", "C# (ASP.NET) Web Api", "C# (ASP.NET) Web App MVC", "Docker", 
+"TypeScript (Angular)", "Python", "JavaScript (Node.JS, Express)", "HTML 5", "CSS and Bootstrap", 
+"PHP", "SQL", "phpMyAdmin", "GIT & GitHub", "C", "C++", "VPS", "JSON", "Microsoft Office"];
 
 function LoadSkills(){
     var num    = 0;
