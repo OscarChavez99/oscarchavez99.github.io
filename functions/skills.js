@@ -2,6 +2,10 @@ var skills = ["C# (.NET)", "C# (ASP.NET) Web Api", "C# (ASP.NET) Web App MVC", "
 "TypeScript (Angular)", "Azure DevOps", "Python", "JavaScript (Node.JS, Express)", "HTML 5", "CSS and Bootstrap", 
 "PHP", "SQL", "phpMyAdmin", "GIT & GitHub", "C", "C++", "VPS", "JSON", "Microsoft Office"];
 
+function getAllSkills() {
+    return skills;
+}
+
 function getFourRandomSkills(){
     var num    = 0;
     var skills_copy = skills.slice();
@@ -11,5 +15,5 @@ function getFourRandomSkills(){
         four_skills.push(skills_copy[num]); //Push element to the 3 size array
         skills_copy.splice(num, 1); //Delete element from the array
     }
-    return [skills, four_skills]; //Return two or more vars
+    return four_skills; //Return two or more vars
 }
