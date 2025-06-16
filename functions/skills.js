@@ -2,7 +2,7 @@ var skills = ["C# (.NET)", "C# (ASP.NET) Web Api", "C# (ASP.NET) Web App MVC", "
 "TypeScript (Angular)", "Azure DevOps", "Python", "JavaScript (Node.JS, Express)", "HTML 5", "CSS and Bootstrap", 
 "PHP", "SQL", "phpMyAdmin", "GIT & GitHub", "C", "C++", "VPS", "JSON", "Microsoft Office"];
 
-function LoadSkills(){
+function getFourRandomSkills(){
     var num    = 0;
     var skills_copy = skills.slice();
     var four_skills = [];

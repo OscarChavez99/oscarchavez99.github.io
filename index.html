@@ -39,13 +39,14 @@
             <div class="row mx-3">
                 <!-- Bucle for para generar las 4 cards -->
                 <script>
-                    var result = LoadSkills();
+                    var result = getFourRandomSkills();
                     var four_skills = result[1];
-                    var skill_img = ""; // Variable para almacenar la ruta de la imagen de cada habilidad
+                    var skill_img = ""; // Store image route
                     for (let i = 0; i < 4; i++) {
                         skill_img = "public/img/skills/";
-                        if (four_skills[i] == "C# (.NET)") {
-                            skill_img += "C sharp";
+                        // Trim 'C#'
+                        if (four_skills[i].includes('#')) {
+                            skill_img += four_skills[i].replace('#', ' sharp');
                         } else {
                             skill_img += four_skills[i];
                         }

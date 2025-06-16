@@ -1,7 +1,7 @@
 function CreateCards(all_skills, skill_img, rowContainer){
     
     for (var i = 0; i<all_skills.length; i++) { 
-        skill_img = "public/img/skills/"; //image route
+        skill_img = "public/img/skills/"; // image route
         // Trim '#'
         if (all_skills[i].includes('#')){
             skill_img += all_skills[i].replace('#', ' sharp');

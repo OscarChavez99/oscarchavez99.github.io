@@ -41,7 +41,7 @@
                     var rowContainer = document.getElementById("skills-row-container");
                     var original_skills_order;
                     function ShowSkills(selectedValue) {
-                        var result = LoadSkills(); 
+                        var result = getFourRandomSkills(); 
                         var all_skills = result[0];
                         if (!original_skills_order) //If ShowSkills it's first time called
                             original_skills_order = all_skills.slice(); //slice = create a copy
