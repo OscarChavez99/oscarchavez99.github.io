@@ -27,7 +27,7 @@ function getAllSkills() {
 }
 
 function getFourRandomSkills(){
-    var num    = 0;
+    var num = 0;
     var skills_copy = skills.slice();
     var four_skills = [];
     for (var i = 0; i < 4; i++) {
