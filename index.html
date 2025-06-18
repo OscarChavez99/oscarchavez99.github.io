@@ -40,11 +40,11 @@
                 <!-- Create 4 cards -->
                 <script>
                     var four_skills = getFourRandomSkills();
-                    var cleaned_four_skills = replaceSharpInArray(four_skills);
+                    var fourSanitizedSkills = replaceSharpInArray(four_skills);
                     var skill_img = "";
                     for (let i = 0; i < 4; i++) {
                         skill_img = "public/img/skills/";
-                        skill_img += cleaned_four_skills[i];
+                        skill_img += fourSanitizedSkills[i];
                         document.write(`
                             <div class="card mx-3 mb-3" style="width: 17rem;">
                                 <div class="card-body">

@@ -25,8 +25,8 @@
         <div class="row d-flex justify-content-center">
             <div class="col-6">
                 <select id="order-select" class="form-select" onChange="ShowSkills(this.value);">
-                    <option selected value="1" class="">Default</option>
-                    <option value="2">A-Z</option>
+                    <option selected value="default" class="">Default</option>
+                    <option value="alphabetical">A-Z</option>
                 </select>
             </div>
         </div>
@@ -37,26 +37,30 @@
         <div class="container d-flex justify-content-center align-items-center h-100"> <!--Cards container-->
             <div class="row" id="skills-row-container"> <!-- mx-5 -->
                 <script>
-                    selectedValue = null;
-                    var rowContainer = document.getElementById("skills-row-container");
-                    var original_skills_order;
-                    function ShowSkills(selectedValue) {
-                        var all_skills = getAllSkills(); 
-                        if (!original_skills_order) //If ShowSkills it's first time called
-                            original_skills_order = all_skills.slice(); //slice = create a copy
+                    let selectedValue = "default";
+                    const rowContainer = document.getElementById("skills-row-container");
+                    let originalSkillsOrder;
 
-                        if (selectedValue === "2") 
-                            all_skills.sort();
-                        else if (selectedValue === "1") 
-                            all_skills = original_skills_order.slice();
+                    function ShowSkills(selectedValue = "default") {
+                        const allSkills = getAllSkills();
+                        let sanitizedSkills = replaceSharpInArray(allSkills);
+                        
+                        // Save the original order only the first time
+                        if (!originalSkillsOrder) {
+                            originalSkillsOrder = sanitizedSkills.slice(); // shallow copy
+                        }
+
+                        if (selectedValue === "alphabetical") {
+                            sanitizedSkills.sort();
+                        } else if (selectedValue === "default") {
+                            sanitizedSkills = originalSkillsOrder.slice();
+                        }
                         
                         rowContainer.innerHTML = "";
-                        var skill_img = "";
-                        //For i=0; i<i<all_skills.length...
-                        CreateCards(all_skills, skill_img, rowContainer);
+                        CreateCards(sanitizedSkills, rowContainer);
                     }
-                    //Call the function 
-                    ShowSkills(selectedValue);                   
+
+                    ShowSkills();                   
                 </script>
             </div>
         </div>
