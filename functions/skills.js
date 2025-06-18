@@ -1,6 +1,26 @@
-var skills = ["C# (.NET)", "C# (ASP.NET) Web Api", "C# (ASP.NET) Web App MVC", "Docker", 
-"TypeScript (Angular)", "Azure DevOps", "Python", "JavaScript (Node.JS, Express)", "HTML 5", "CSS and Bootstrap", 
-"PHP", "SQL", "phpMyAdmin", "GIT & GitHub", "C", "C++", "VPS", "JSON", "Microsoft Office"];
+var skills = [
+    "C# (.NET)", 
+    "Angular & TypeScript", 
+    "JavaScript", 
+    "SQL",
+    "Minimal & Controller APIs (C#)",
+    "Nunit",
+    "Python",
+    "HTML 5",
+    "CSS and Bootstrap",
+    "GIT & GitHub",
+    "Azure DevOps",
+    "C# (ASP.NET) Web Api",
+    "Node.JS & Express",
+    "phpMyAdmin",
+    "C++",
+    "C",
+    "JSON",
+    "PHP",
+    "VPS",
+    "Docker",
+    "Microsoft Office"
+];
 
 function getAllSkills() {
     return skills;

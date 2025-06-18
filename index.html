@@ -6,8 +6,9 @@
     <title>Index</title>
     <!--CSS-->
     <link rel="stylesheet" href="public/css/index.css">
-    <!--Get Skills-->
+    <!--Functions-->
     <script src="functions/skills.js"></script>
+    <script src="functions/create_cards.js"></script>
 </head>
 <body>
     <!--NAVBAR-->
@@ -36,26 +37,14 @@
         </div>
         <!--Cards-->
         <div class="d-flex justify-content-center align-items-center h-100"> <!--Cards container-->
-            <div class="row mx-3">
+            <div class="row mx-3" id="four-skills-container">
                 <!-- Create 4 cards -->
                 <script>
-                    var four_skills = getFourRandomSkills();
-                    var fourSanitizedSkills = replaceSharpInArray(four_skills);
-                    var skill_img = "";
-                    for (let i = 0; i < 4; i++) {
-                        skill_img = "public/img/skills/";
-                        skill_img += fourSanitizedSkills[i];
-                        document.write(`
-                            <div class="card mx-3 mb-3" style="width: 17rem;">
-                                <div class="card-body">
-                                    <h5 class="card-title">${four_skills[i]}</h5>
-                                    <img src="${skill_img}.png" class="card-img-top img-fluid" alt="${four_skills[i]}">
-                                    <p class="card-text"></p>
-                                    <a href="https://www.google.com/search?q=${encodeURIComponent(four_skills[i])}" target="_blank" class="btn btn-primary">Learn More</a>
-                                </div>
-                            </div>
-                        `);
-                    }
+                    const four_skills = getFourRandomSkills();
+                    let fourSanitizedSkills = replaceSharpInArray(four_skills);
+                    const rowContainer = document.getElementById("four-skills-container");
+                    rowContainer.innerHTML = "";
+                    CreateIndexCards(fourSanitizedSkills, rowContainer, four_skills);
                 </script>
             </div>
         </div>

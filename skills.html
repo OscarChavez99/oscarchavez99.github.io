@@ -6,7 +6,7 @@
     <title>Skills</title>
     <!--CSS-->
     <link rel="stylesheet" href="public/css/skills.css">
-    <!--Get Skills-->
+    <!--Functions-->
     <script src="functions/skills.js"></script>
     <script src="functions/create_cards.js"></script>
 </head>
@@ -42,22 +42,22 @@
                     let originalSkillsOrder;
 
                     function ShowSkills(selectedValue = "default") {
-                        const allSkills = getAllSkills();
-                        let sanitizedSkills = replaceSharpInArray(allSkills);
+                        let allSkills = getAllSkills();
                         
                         // Save the original order only the first time
                         if (!originalSkillsOrder) {
-                            originalSkillsOrder = sanitizedSkills.slice(); // shallow copy
+                            originalSkillsOrder = allSkills.slice(); // shallow copy
                         }
 
                         if (selectedValue === "alphabetical") {
-                            sanitizedSkills.sort();
+                            allSkills.sort();
                         } else if (selectedValue === "default") {
-                            sanitizedSkills = originalSkillsOrder.slice();
+                            allSkills = originalSkillsOrder.slice();
                         }
                         
                         rowContainer.innerHTML = "";
-                        CreateCards(sanitizedSkills, rowContainer);
+                        const sanitizedSkills = replaceSharpInArray(allSkills);
+                        CreateSkillCards(sanitizedSkills, rowContainer, allSkills);
                     }
 
                     ShowSkills();                   
