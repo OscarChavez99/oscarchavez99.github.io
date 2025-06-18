@@ -15,5 +15,9 @@ function getFourRandomSkills(){
         four_skills.push(skills_copy[num]); //Push element to the 3 size array
         skills_copy.splice(num, 1); //Delete element from the array
     }
-    return four_skills; //Return two or more vars
+    return four_skills;
+}
+
+function replaceSharpInArray(arr) {
+    return arr.map(str => str.replace(/#/g, ' sharp'));
 }

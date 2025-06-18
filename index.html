@@ -37,18 +37,14 @@
         <!--Cards-->
         <div class="d-flex justify-content-center align-items-center h-100"> <!--Cards container-->
             <div class="row mx-3">
-                <!-- Bucle for para generar las 4 cards -->
+                <!-- Create 4 cards -->
                 <script>
                     var four_skills = getFourRandomSkills();
-                    var skill_img = ""; // Store image route
+                    var cleaned_four_skills = replaceSharpInArray(four_skills);
+                    var skill_img = "";
                     for (let i = 0; i < 4; i++) {
                         skill_img = "public/img/skills/";
-                        // Trim 'C#'
-                        if (four_skills[i].includes('#')) {
-                            skill_img += four_skills[i].replace('#', ' sharp');
-                        } else {
-                            skill_img += four_skills[i];
-                        }
+                        skill_img += cleaned_four_skills[i];
                         document.write(`
                             <div class="card mx-3 mb-3" style="width: 17rem;">
                                 <div class="card-body">
