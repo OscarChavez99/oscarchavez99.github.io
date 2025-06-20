@@ -6,7 +6,7 @@ function CreateSkillCards(sanitizedSkills, rowContainer, allSkills){
         skill_img += sanitizedSkills[i];
         
         rowContainer.innerHTML += `
-        <div class="card mx-2 mb-3" style="width: 15.8rem;">
+        <div class="card mx-2 mb-3" style="width: 14.2rem;">
                 <div class="card-body">
                     <h5 class="card-title">${allSkills[i]}</h5>
                     <img src="${skill_img}.png" class="card-img-top img-fluid" alt="${skill_img[i]}">
