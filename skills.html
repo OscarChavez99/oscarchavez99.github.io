@@ -25,7 +25,7 @@
         <div class="row d-flex justify-content-center">
             <div class="col-6">
                 <select id="order-select" class="form-select" onChange="ShowSkills(this.value);">
-                    <option selected value="default" class="">Default</option>
+                    <option selected value="expertise" class="">Expertise</option>
                     <option value="alphabetical">A-Z</option>
                 </select>
             </div>
@@ -37,11 +37,11 @@
         <div class="container d-flex justify-content-center align-items-center h-100"> <!--Cards container-->
             <div class="row" id="skills-row-container"> <!-- mx-5 -->
                 <script>
-                    let selectedValue = "default";
+                    let selectedValue = "expertise";
                     const rowContainer = document.getElementById("skills-row-container");
                     let originalSkillsOrder;
 
-                    function ShowSkills(selectedValue = "default") {
+                    function ShowSkills(selectedValue = "expertise") {
                         let allSkills = getAllSkills();
                         
                         // Save the original order only the first time
@@ -51,7 +51,7 @@
 
                         if (selectedValue === "alphabetical") {
                             allSkills.sort();
-                        } else if (selectedValue === "default") {
+                        } else if (selectedValue === "expertise") {
                             allSkills = originalSkillsOrder.slice();
                         }
                         
