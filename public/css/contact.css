@@ -4,12 +4,17 @@ html, body {
     padding: 0;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
+    min-height: 100vh;
 }
 
-#contact-title{
+#content {
+    flex-grow: 1;
+}
+
+#contact-title {
     margin-top: 2rem;
 }
 
@@ -17,6 +22,6 @@ img {
     width: 2rem;
 }
 
-table a{
+table a {
     color: #ffc107;
 }

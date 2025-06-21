@@ -1,64 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- CSS -->
-    <link rel="stylesheet" href="public/css/contact.css">
-    <title> Contact </title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact</title>
+  <!-- CSS -->
+  <link rel="stylesheet" href="public/css/contact.css" />
 </head>
+
 <body>
-    <script src="partials/navigation.js"></script>
-    <!--Title-->
-    <h1 id="contact-title" class="display-1 text-warning d-flex justify-content-center ">Contact me</h1>
-    <div id="contact-container-2" class="vh-50 container pt-2 text-center d-flex justify-content-center align-items-center">
-        <p id="contact-text" class="display-6 text-dark d-flex justify-content-center">
-            I will respond as quickly as I can!
-        </p>
+  <script src="partials/navigation.js"></script>
+
+  <!--Title-->
+  <main id="content" class="flex-grow-1">
+    <h1 id="contact-title" class="display-1 text-warning d-flex justify-content-center mb-5">Contact me</h1>
+    <div id="contact-container" class="container text-center my-2">
+      <p id="contact-text" class="display-6 text-dark mb-5">
+        I will respond as quickly as I can!
+      </p>
     </div>
-    <!--Table-->
+
+    <!-- Table -->
     <div class="container">
-        <div class="row">
-          <div class="">
-            <table class="table table-dark align-middle">
-                <!--Gmail-->
-                <tr>
-                    <td>Email:</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="mailto:oscar.chavez.gomez.99@gmail.com" class="links">
-                            <img src="public/img/contact_logos/gmail.png" class="rounded mx-auto d-block" alt="picture">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="mailto:oscar.chavez.gomez.99@gmail.com">oscar.chavez.gomez.99
-                            @gmail.com</a>
-                    </td>
-                </tr>
-                <!--LinkedIn-->
-                <tr>
-                    <td>LinkedIn:</td>
-                    <td></td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href="https://www.linkedin.com/in/oscar-fabian-chavez-gomez/" class="linkss">
-                            <img src="public/img/contact_logos/linkedin.png" class="rounded mx-auto d-block" alt="picture">
-                        </a>
-                    </td>
-                    <td>
-                        <a href="https://www.linkedin.com/in/oscar-fabian-chavez-gomez/">LinkedIn</a>
-                    </td>
-                </tr>                
-            </table>
-          </div>
+      <div class="row">
+        <div class="col">
+          <table class="table table-dark align-middle">
+            <!-- Gmail -->
+            <tr>
+              <td>Email:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <a href="mailto:oscar.chavez.gomez.99@gmail.com" class="links">
+                  <img src="public/img/contact_logos/gmail.png" class="rounded mx-auto d-block" alt="Gmail logo" />
+                </a>
+              </td>
+              <td>
+                <a href="mailto:oscar.chavez.gomez.99@gmail.com">oscar.chavez.gomez.99@gmail.com</a>
+              </td>
+            </tr>
+
+            <!-- LinkedIn -->
+            <tr>
+              <td>LinkedIn:</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td>
+                <a href="https://www.linkedin.com/in/oscar-fabian-chavez-gomez/" class="links">
+                  <img src="public/img/contact_logos/linkedin.png" class="rounded mx-auto d-block" alt="LinkedIn logo" />
+                </a>
+              </td>
+              <td>
+                <a href="https://www.linkedin.com/in/oscar-fabian-chavez-gomez/">LinkedIn</a>
+              </td>
+            </tr>
+          </table>
         </div>
       </div>
+    </div>
+  </main>
 
-    <!--Footer-->
-    <script src="partials/footer.js"></script>
+  <!-- Footer -->
+  <div id="footer"></div>
+  <script src="partials/footer.js"></script>
 </body>
 </html>
