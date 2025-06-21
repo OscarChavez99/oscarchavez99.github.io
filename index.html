@@ -40,11 +40,11 @@
             <div id="four-skills-container" class="row mx-3">
                 <!-- Create 4 cards -->
                 <script>
-                    const fourSkills = getFourRandomSkills();
-                    let fourSanitizedSkills = replaceSharpInArray(fourSkills);
-                    const rowContainer = document.getElementById("four-skills-container");
-                    rowContainer.innerHTML = "";
-                    CreateIndexCards(fourSanitizedSkills, rowContainer, fourSkills);
+                    const originalFourSkills = getFourRandomSkills();
+                    let fourSanitizedSkills = replaceSharpInArray(originalFourSkills);
+                    const fourSkillsContainer = document.getElementById("four-skills-container");
+                    fourSkillsContainer.innerHTML = "";
+                    CreateIndexCards(fourSanitizedSkills, fourSkillsContainer, originalFourSkills);
                 </script>
             </div>
         </div>

@@ -38,26 +38,26 @@
             <div id="skills-row-container" class="row justify-content-center">
                 <script>
                     let selectedValue = "expertise";
-                    const rowContainer = document.getElementById("skills-row-container");
+                    const skillsContainer = document.getElementById("skills-row-container");
                     let originalSkillsOrder;
 
                     function ShowSkills(selectedValue = "expertise") {
-                        let allSkills = getAllSkills();
+                        let originalSkills = getAllSkills();
                         
                         // Save the original order only the first time
                         if (!originalSkillsOrder) {
-                            originalSkillsOrder = allSkills.slice(); // shallow copy
+                            originalSkillsOrder = originalSkills.slice(); // shallow copy
                         }
 
                         if (selectedValue === "alphabetical") {
-                            allSkills.sort();
+                            originalSkills.sort();
                         } else if (selectedValue === "expertise") {
-                            allSkills = originalSkillsOrder.slice();
+                            originalSkills = originalSkillsOrder.slice();
                         }
                         
-                        rowContainer.innerHTML = "";
-                        const sanitizedSkills = replaceSharpInArray(allSkills);
-                        CreateSkillCards(sanitizedSkills, rowContainer, allSkills);
+                        skillsContainer.innerHTML = "";
+                        const sanitizedSkills = replaceSharpInArray(originalSkills);
+                        CreateSkillCards(sanitizedSkills, skillsContainer, originalSkills);
                     }
 
                     ShowSkills();                   
